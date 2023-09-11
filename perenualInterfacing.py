@@ -1,8 +1,16 @@
 from api_secrets import PERENUAL_API
-ID = 0
-URL : f"https://perenual.com/api/species/details/[{ID}]?key={PERENUAL_API}"
+import requests
 
-def getPlant(name):
-    # return ID from name
-    # what makes the most sense would be to try searchingg through the whole string and once stumbling across a match find the
-    # page number 
+# several URLS
+
+def getPlantDetails(ID):
+    url = f"https://perenual.com/api/species/details/[{ID}]?key={PERENUAL_API}"
+    payload = {}
+    headers = {}
+
+    response = requests.request("", url, headers=headers, data=payload)
+
+    print(response.text)
+
+
+getPlantDetails(1)
