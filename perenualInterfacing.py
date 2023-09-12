@@ -3,14 +3,13 @@ import requests
 
 # several URLS
 
-def getPlantDetails(ID):
-    url = f"https://perenual.com/api/species/details/[{ID}]?key={PERENUAL_API}"
-    payload = {}
-    headers = {}
+import requests
 
-    response = requests.request("", url, headers=headers, data=payload)
+url = f"https://perenual.com/api/species-list?key={PERENUAL_API}"
 
-    print(response.text)
+payload = {}
+headers = {}
 
+response = requests.request("", url, headers=headers, data=payload)
 
-getPlantDetails(1)
+print(response.text)
